@@ -1,0 +1,43 @@
+// bower:scss
+// endbower
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.thumbNails {
+    // margin: 50px auto 0 auto;
+    position: absolute;
+    right: 5px;
+    vertical-align: top;
+    display: inline-block;
+    width: 800px;
+    background-color: #eee;
+    border-radius: 6px;
+    border: 1px solid grey;
+}
+
+.button {
+    background-color: red;
+    color: white;
+
+}
+
+.container {
+    position: fixed;
+    display: inline-block;
+    width: 600px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 6px;
+
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
