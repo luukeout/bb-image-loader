@@ -1,5 +1,10 @@
 "use strict",
 
+
+//////////////////////
+// Thumbnail View
+//////////////////////
+
 ThumbView = Backbone.View.extend({
 
 	template: _.template($('.thumbView-template').text()),
@@ -8,19 +13,24 @@ ThumbView = Backbone.View.extend({
 		$('.container').append(this.el);
 		this.render()
 
+	},
+
+	
+
 		this.collection = new PicCollection();
 		this.collection.fetch()
 		this.listenTo(this.collection, 'add', function(pic) {
 			new ThumbView({model: pic});
 		})
-	},
+
 
 	render: function() {
 		var renderedTemplate = this.template(this.model.attributes);
 		this.$el.html(renderedTemplate);
-
 	},
 })
+
+
 
 $('.button').click(function(){
 	var nameInput = $('.name-input').val();
@@ -35,12 +45,14 @@ $('.button').click(function(){
 		caption : captionInput,
 	});
 
-	aThumbView
+	aThumbView.collection.add(pic);
+	pic.save();
 
-}
+})
 	
+var aThumbView = new ThumbView();
 
-	var aThumbView = new ThumbView();
+
 
 
 
